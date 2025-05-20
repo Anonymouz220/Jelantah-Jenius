@@ -214,25 +214,37 @@ nav.sticky .menu a::after {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
-.about .title span {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1f2937;
+.about .title span,
+.contact .title span {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1f2937 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
-  padding-bottom: 1rem;
-  letter-spacing: -0.5px;
+  padding-bottom: 1.5rem;
+  letter-spacing: -1px;
+  display: inline-block;
 }
 
-.about .title span::after {
+.about .title span::after,
+.contact .title span::after {
   content: '';
   position: absolute;
-  width: 60%;
-  height: 3px;
-  background: #3b82f6;
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  border-radius: 3px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.about .title,
+.contact .title {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .about-details {
