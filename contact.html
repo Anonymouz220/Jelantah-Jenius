@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home - Ajmarel's Portfolio</title>
+  <title>Contact - Ajmarel's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -17,29 +15,34 @@
       <ul class="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="aboutme.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
       <div class="menu-btn"><i class="fas fa-bars"></i></div>
       <div class="cancel-btn"><i class="fas fa-times"></i></div>
     </div>
   </nav>
 
-  <!-- Home Section -->
-  <section class="home" id="home">
-    <div class="home-content">
-      <div class="text-one">Welcome to</div>
-      <div class="text-two">Ajmarel's Portfolio</div>
-      <div class="text-three">Quote of the Day</div>
-      <div class="text-four">“Yesterday's the past, tomorrow's the future, but today is a gift. That's why it's called the present.". -Albert Einstein</div>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="content">
+      <div class="title"><span>Contact Me</span></div>
+      <div class="text">
+        <p>Feel free to get in touch via email!</p>
+      <p>Email: ajmarel_mizarelly@sbr.sch.id</p>
+      </div>
+      <form action="#" class="contact-form">
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
     </div>
   </section>
 
-  <!-- Scroll to top button -->
   <div class="scroll-button">
-    <a href="home.html"><i class="fas fa-arrow-up"></i></a>
+    <a href="contact.html"><i class="fas fa-arrow-up"></i></a>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
