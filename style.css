@@ -301,7 +301,21 @@ nav.sticky {
   gap: 5rem;
 }
 
-.contact-info h3 { font-size: 3rem; margin-bottom: 2rem; }
+.contact-info p { margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+.social-icons a:hover {
+  color: var(--secondary);
+  transform: translateY(-3px);
+}
 
 .modern-form input, .modern-form textarea {
   width: 100%;
@@ -457,20 +471,21 @@ nav.sticky {
     color: var(--primary);
     font-size: 2rem;
     cursor: pointer;
-    align-self: flex-end;
     margin-bottom: 2rem;
+    width: 100%;
+    text-align: right; /* Position it relative to the menu content */
   }
 
   .navbar .menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%; /* Adjusted width for better look */
+    width: 80%;
     max-width: 300px;
     height: 100vh;
     background: var(--white);
     flex-direction: column;
-    justify-content: flex-start; /* Align to top */
+    justify-content: flex-start;
     align-items: center;
     padding: 2rem;
     transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
