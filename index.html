@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <nav>
+  <nav id="navbar">
     <div class="navbar">
       <div class="logo">
         <a href="index.html">
-          <img src="attached_assets/JELANTAH_JENIUS_png_2_1767949499577.png" alt="Jelantah Jenius Logo" style="height: 40px; vertical-align: middle;">
+          <img src="attached_assets/JELANTAH_JENIUS_png_2_1767949499577.png" alt="Logo">
           Jelantah Jenius
         </a>
       </div>
@@ -24,32 +24,47 @@
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <div class="menu-btn"><i class="fas fa-bars"></i></div>
-      <div class="cancel-btn"><i class="fas fa-times"></i></div>
     </div>
   </nav>
 
   <section class="home" id="home">
     <div class="home-content">
-      <div class="text-one">Welcome to</div>
-      <div class="text-two">Jelantah Jenius</div>
-      <div class="text-three">Dari Jelantah Jadi Berkah</div>
-      <div class="text-four">Transforming used cooking oil into a valuable resource for a sustainable future.</div>
-      
-      <div style="margin-top: 3rem;">
-        <h3>Our Partners</h3>
-        <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; flex-wrap: wrap;">
-          <!-- Placeholder for partners -->
-          <div style="padding: 1rem; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Recycling Industries</div>
-          <div style="padding: 1rem; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Energy Sector</div>
-          <div style="padding: 1rem; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Local Communities</div>
-        </div>
+      <span class="text-one">Innovating Sustainability</span>
+      <h1 class="text-two">Dari Jelantah<br>Jadi Berkah</h1>
+      <p class="text-three">Transforming every drop of used cooking oil into a gift for our planet and community.</p>
+      <div class="cta-group">
+        <a href="programs.html" class="btn-primary">Our Impact</a>
+        <a href="about.html" style="color: var(--primary); text-decoration: none; font-weight: 700; align-self: center;">Learn More <i class="fas fa-arrow-right"></i></a>
       </div>
+    </div>
+    <div style="position: absolute; right: 5%; bottom: 10%; width: 400px; height: 500px; border-radius: 40px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.2); z-index: 1;" class="hero-image-desktop">
+      <img src="attached_assets/stock_images/sustainable_renewabl_993aadc3.jpg" alt="Sustainability" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
   </section>
 
-  <div class="scroll-button">
-    <a href="#home"><i class="fas fa-arrow-up"></i></a>
-  </div>
+  <section class="partners-section">
+    <div class="section-label">
+      <h2>Strategic Partners</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto;">Collaborating with industry leaders to power a circular economy.</p>
+    </div>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <i class="fas fa-recycle"></i>
+        <h4>Bio-Energy Corp</h4>
+        <p>Renewable energy production</p>
+      </div>
+      <div class="partner-card">
+        <i class="fas fa-leaf"></i>
+        <h4>Eco-Waste Sol</h4>
+        <p>Sustainable collection logistics</p>
+      </div>
+      <div class="partner-card">
+        <i class="fas fa-hands-helping"></i>
+        <h4>Community Hub</h4>
+        <p>Local empowerment & education</p>
+      </div>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>

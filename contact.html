@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <nav>
+  <nav id="navbar">
     <div class="navbar">
       <div class="logo">
         <a href="index.html">
-          <img src="attached_assets/JELANTAH_JENIUS_png_2_1767949499577.png" alt="Jelantah Jenius Logo" style="height: 40px; vertical-align: middle;">
+          <img src="attached_assets/JELANTAH_JENIUS_png_2_1767949499577.png" alt="Logo">
           Jelantah Jenius
         </a>
       </div>
@@ -23,24 +23,29 @@
         <li><a href="programs.html">Programs</a></li>
         <li><a href="contact.html" class="active">Contact Us</a></li>
       </ul>
-      <div class="menu-btn"><i class="fas fa-bars"></i></div>
-      <div class="cancel-btn"><i class="fas fa-times"></i></div>
     </div>
   </nav>
 
-  <section class="contact" id="contact">
+  <section class="contact">
     <div class="content">
-      <div class="title"><span>Contact Us</span></div>
-      <div class="text">
-        <p>Join us in transforming used cooking oil into a blessing!</p>
-        <p>Email: contact@jelantahjenius.org</p>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>Let's Make a Change</h3>
+          <p style="color: rgba(255,255,255,0.8);">Ready to contribute to a cleaner, more sustainable Indonesia? We're here to help you get started.</p>
+          <div style="margin-top: 3rem;">
+            <p><i class="fas fa-envelope"></i> contact@jelantahjenius.org</p>
+            <p><i class="fas fa-map-marker-alt"></i> Bogor, Indonesia</p>
+          </div>
+        </div>
+        <div class="modern-form">
+          <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="How can we help you today?" rows="5" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
       </div>
-      <form action="#" class="contact-form">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <textarea placeholder="How would you like to contribute or what would you like to ask?" required></textarea>
-        <button type="submit">Submit Inquiry</button>
-      </form>
     </div>
   </section>
 
