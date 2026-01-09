@@ -1,62 +1,51 @@
-// Select the <nav> element and the scroll-to-top button link
+// Select the <nav> element and elements
 let nav = document.querySelector("nav");
-let scrollBtn = document.querySelector(".scroll-button a");
-
-// Listen to window scroll event to toggle sticky navbar and scroll button visibility
-window.onscroll = function () {
-  // If user has scrolled down more than 20px from the top
-  if (document.documentElement.scrollTop > 20) {
-    // Add 'sticky' class to navbar to change its style
-    nav.classList.add("sticky");
-    // Show the scroll-to-top button
-    scrollBtn.style.display = "block";
-  } else {
-    // Remove 'sticky' class when user is near the top
-    nav.classList.remove("sticky");
-    // Hide the scroll-to-top button
-    scrollBtn.style.display = "none";
-  }
-};
-
-// Select body, navbar container, menu button, and cancel button elements
 let body = document.querySelector("body");
 let navBar = document.querySelector(".navbar");
 let menuBtn = document.querySelector(".menu-btn");
 let cancelBtn = document.querySelector(".cancel-btn");
 
-// Function to open side navigation menu
-menuBtn.onclick = function () {
-  // Add 'active' class to navbar to show side menu
-  navBar.classList.add("active");
-  // Hide the menu button by reducing opacity and disabling pointer events
-  menuBtn.style.opacity = "0";
-  menuBtn.style.pointerEvents = "none";
-  // Disable page scroll while menu is open
-  body.style.overflow = "hidden";
-  // Disable pointer events on scroll button to prevent interaction
-  scrollBtn.style.pointerEvents = "none";
+// Handle scroll for sticky nav
+window.onscroll = function () {
+  if (nav) {
+    if (document.documentElement.scrollTop > 20) {
+      nav.classList.add("sticky");
+    } else {
+      nav.classList.remove("sticky");
+    }
+  }
 };
 
-// Function to close side navigation menu and restore states
-const hideNavMenu = () => {
-  // Remove 'active' class to hide side menu
-  navBar.classList.remove("active");
-  // Show the menu button again
-  menuBtn.style.opacity = "1";
-  menuBtn.style.pointerEvents = "auto";
-  // Enable page scroll again
-  body.style.overflow = "auto";
-  // Enable pointer events on scroll button
-  scrollBtn.style.pointerEvents = "auto";
-};
+// Handle mobile menu if elements exist
+if (menuBtn) {
+  menuBtn.onclick = function () {
+    if (navBar) navBar.classList.add("active");
+    menuBtn.style.opacity = "0";
+    menuBtn.style.pointerEvents = "none";
+    body.style.overflow = "hidden";
+  };
+}
 
-// Close side navigation when cancel button is clicked
-cancelBtn.onclick = hideNavMenu;
+if (cancelBtn) {
+  cancelBtn.onclick = function () {
+    if (navBar) navBar.classList.remove("active");
+    if (menuBtn) {
+      menuBtn.style.opacity = "1";
+      menuBtn.style.pointerEvents = "auto";
+    }
+    body.style.overflow = "auto";
+  };
+}
 
-// Select all navigation menu links
+// Close mobile menu on link click
 let navLinks = document.querySelectorAll(".menu li a");
-
-// Add event listener to each menu link to close side menu on click
 navLinks.forEach((link) => {
-  link.addEventListener("click", hideNavMenu);
+  link.addEventListener("click", () => {
+    if (navBar) navBar.classList.remove("active");
+    if (menuBtn) {
+      menuBtn.style.opacity = "1";
+      menuBtn.style.pointerEvents = "auto";
+    }
+    body.style.overflow = "auto";
+  });
 });
