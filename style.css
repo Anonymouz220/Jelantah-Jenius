@@ -37,7 +37,16 @@ nav {
 }
 
 .cancel-btn {
-  display: none;
+  display: flex;
+  color: var(--primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cancel-btn:hover {
+  color: var(--secondary);
+  transform: rotate(90deg);
 }
 
 nav.sticky {
@@ -397,13 +406,13 @@ nav.sticky {
   }
 
   .cancel-btn {
-    display: block;
+    display: flex;
     color: var(--primary);
     font-size: 2rem;
     cursor: pointer;
     margin-bottom: 2rem;
     width: 100%;
-    text-align: right;
+    justify-content: flex-end;
   }
 
   .navbar .menu {
