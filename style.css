@@ -36,6 +36,10 @@ nav {
   transition: var(--transition);
 }
 
+.cancel-btn {
+  display: none;
+}
+
 nav.sticky {
   padding: 1rem 0;
   background: rgba(255, 255, 255, 0.8);
@@ -399,7 +403,7 @@ nav.sticky {
     cursor: pointer;
     margin-bottom: 2rem;
     width: 100%;
-    text-align: right; /* Position it relative to the menu content */
+    text-align: right;
   }
 
   .navbar .menu {
