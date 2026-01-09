@@ -37,7 +37,7 @@ nav {
 }
 
 .cancel-btn {
-  display: flex;
+  display: none; /* Hidden by default on desktop */
   color: var(--primary);
   font-size: 1.5rem;
   cursor: pointer;
@@ -410,26 +410,26 @@ nav.sticky {
     color: var(--primary);
     font-size: 2rem;
     cursor: pointer;
-    margin-bottom: 2rem;
-    width: 100%;
-    justify-content: flex-end;
+    margin-bottom: 2.5rem;
+    align-self: flex-end; /* Align to top-right of the menu */
+    width: auto;
   }
 
   .navbar .menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
-    max-width: 300px;
+    width: 85%;
+    max-width: 320px;
     height: 100vh;
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    padding: 2rem;
+    align-items: flex-start; /* Left align text */
+    padding: 2.5rem;
     transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    box-shadow: -15px 0 40px rgba(0,0,0,0.15);
   }
 
   .navbar.active .menu {
@@ -437,15 +437,52 @@ nav.sticky {
   }
 
   .menu a {
-    font-size: 1.2rem;
-    padding: 1rem;
+    font-size: 1.3rem;
+    padding: 1.2rem 0;
     width: 100%;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid rgba(0,0,0,0.05);
   }
 
-  .menu a:last-child {
-    border-bottom: none;
+  /* Fix for awkward content on mobile */
+  .about, .education, .programs, .contact {
+    padding: 6rem 0;
+  }
+
+  .content-box {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .text-container h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-container p {
+    font-size: 1.1rem;
+  }
+
+  .topic {
+    font-size: 1.3rem !important;
+    margin-top: 2rem;
+  }
+
+  .image-container {
+    height: 250px;
+    border-radius: 25px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+    border-radius: 30px;
+    gap: 3rem;
   }
 }
 
