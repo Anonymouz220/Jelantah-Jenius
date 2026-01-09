@@ -449,29 +449,33 @@ nav.sticky {
     color: var(--primary);
     font-size: 1.8rem;
     z-index: 1001;
+    cursor: pointer;
   }
 
   .cancel-btn {
     display: block;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
     color: var(--primary);
     font-size: 2rem;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 2rem;
   }
 
   .navbar .menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 100%;
+    width: 80%; /* Adjusted width for better look */
+    max-width: 300px;
     height: 100vh;
     background: var(--white);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Align to top */
     align-items: center;
+    padding: 2rem;
     transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
   }
 
   .navbar.active .menu {
@@ -479,8 +483,15 @@ nav.sticky {
   }
 
   .menu a {
-    font-size: 1.5rem;
-    padding: 1.5rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .menu a:last-child {
+    border-bottom: none;
   }
 }
 
