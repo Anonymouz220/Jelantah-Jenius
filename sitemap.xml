@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://sitemaps.org">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://jelantahjenius.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- About Us -->
+  <url>
+    <loc>https://jelantahjenius.com/about.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <!-- Articles -->
+  <url>
+    <loc>https://jelantahjenius.com/articles.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <!-- Programs -->
+  <url>
+    <loc>https://jelantahjenius.com/programs.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <!-- Contact Us -->
+  <url>
+    <loc>https://jelantahjenius.com/contact.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
