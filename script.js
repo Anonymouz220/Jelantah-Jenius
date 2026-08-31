@@ -24,7 +24,7 @@ if (menuBtn) {
     menuBtn.style.pointerEvents = "none";
     
     // Only lock background scroll on mobile viewports
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 992) {
       body.style.overflow = "hidden";
     }
   };
