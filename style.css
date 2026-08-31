@@ -44,6 +44,14 @@ nav {
   transition: var(--transition);
 }
 
+.menu-btn {
+  display: none; /* Hide hamburger icon on desktop */
+  color: var(--primary);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
 .cancel-btn:hover {
   color: var(--secondary);
   transform: rotate(90deg);
