@@ -45,7 +45,7 @@ nav {
 }
 
 .menu-btn {
-  display: none; /* Hide hamburger icon on desktop */
+  display: none !important; /* Hide hamburger icon on desktop */
   color: var(--primary);
   font-size: 1.8rem;
   cursor: pointer;
@@ -405,7 +405,7 @@ nav.sticky {
   }
 
   .menu-btn {
-    display: block;
+    display: block !important;
     color: var(--primary);
     font-size: 1.8rem;
     z-index: 1001;
