@@ -22,7 +22,11 @@ if (menuBtn) {
     if (navBar) navBar.classList.add("active");
     menuBtn.style.opacity = "0";
     menuBtn.style.pointerEvents = "none";
-    body.style.overflow = "hidden";
+    
+    // Only lock background scroll on mobile viewports
+    if (window.innerWidth <= 768) {
+      body.style.overflow = "hidden";
+    }
   };
 }
 
