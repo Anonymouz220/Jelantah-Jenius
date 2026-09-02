@@ -35,31 +35,18 @@
   <section class="programs">
     <div class="content-box">
       <div class="image-container">
-        <div class="video-wrapper" id="videoWrapper">
-          <!-- Video Element -->
-          <video 
-            id="recapVideo"
-            autoplay 
-            muted 
-            loop 
-            playsinline 
-            onclick="handleVideoClick(this)">
-            <source src="attached_assets/attached_assets/Jelantah Jenius Recap Vid (1).mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
-          <!-- Controls Bar Below Video -->
-          <div class="video-controls">
-            <button id="muteBtn" class="mute-btn" onclick="toggleMute(event)">
-              <i class="fas fa-volume-mute" id="muteIcon"></i>
-              <span id="muteText">Unmute</span>
-            </button>
-            <span class="zoom-hint"><i class="fas fa-search-plus"></i> Click video to zoom</span>
-          </div>
-        </div>
-
-        <!-- Background Dimmer Overlay for Zoom Mode -->
-        <div id="videoBackdrop" class="video-backdrop" onclick="closeZoom()"></div>
+        <video 
+          id="recapVideo"
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          width="100%" 
+          style="border-radius: 8px; cursor: pointer;"
+          onclick="this.muted = !this.muted;">
+          <source src="attached_assets/Jelantah-Jenius-Recap-Vid-1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div class="text-container">
         <h3>Batch 1 Recap</h3>
@@ -68,49 +55,6 @@
     </div>
   </section>
 
-  <script>
-    function handleVideoClick(video) {
-      const wrapper = document.getElementById('videoWrapper');
-      const backdrop = document.getElementById('videoBackdrop');
-
-      // Unmute video on click
-      if (video.muted) {
-        setMuteState(video, false);
-      }
-  
-      // Toggle zoom modal mode
-      const isExpanded = wrapper.classList.toggle('expanded');
-      if (isExpanded) {
-        backdrop.classList.add('active');
-      } else {
-        backdrop.classList.remove('active');
-      }
-    }
-
-    function toggleMute(e) {
-      e.stopPropagation(); // Prevents triggering video zoom when clicking button
-      const video = document.getElementById('recapVideo');
-      setMuteState(video, !video.muted);
-    }
-
-    function setMuteState(video, shouldMute) {
-      video.muted = shouldMute;
-      const icon = document.getElementById('muteIcon');
-      const text = document.getElementById('muteText');
-
-      if (video.muted) {
-        icon.className = 'fas fa-volume-mute';
-        text.textContent = 'Unmute';
-      } else {
-        icon.className = 'fas fa-volume-up';
-        text.textContent = 'Mute';
-      }
-    }
-
-    function closeZoom() {
-      document.getElementById('videoWrapper').classList.remove('expanded');
-      document.getElementById('videoBackdrop').classList.remove('active');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
