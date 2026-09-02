@@ -238,7 +238,7 @@ nav.sticky {
 }
 
 /* Modern Sections */
-.about, .education, .programs, .contact, .batches {
+.about, .education, .programs, .contact {
   padding: 10rem 0;
 }
 
@@ -250,6 +250,10 @@ nav.sticky {
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: center;
+}
+
+.content-box.reverse {
+  flex-direction: row-reverse;
 }
 
 .image-container {
@@ -476,13 +480,17 @@ nav.sticky {
   }
 
   /* Responsive layout adjustments for main content */
-  .about, .education, .programs, .contact, .batches {
+  .about, .education, .programs, .contact {
     padding: 5rem 0;
   }
 
   .content-box {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  .content-box.reverse .image-container {
+    order: -1; 
   }
 
   .text-container h3 {
@@ -512,3 +520,4 @@ nav.sticky {
     display: none;
   }
 }
+
