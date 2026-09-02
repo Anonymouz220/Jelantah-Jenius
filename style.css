@@ -285,6 +285,89 @@ nav.sticky {
   line-height: 1.2;
 }
 
+/* Normal Inline Container */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+/* Controls Bar Below Video */
+.video-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.mute-btn {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.mute-btn:hover {
+  background: #256528;
+}
+
+.zoom-hint {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* --- ZOOM MODAL STATE (NOT FULLSCREEN) --- */
+.video-wrapper.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 900px; /* Limits maximum zoom size on large desktop screens */
+  z-index: 9999;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Dimmed backdrop background behind zoomed video */
+.video-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9998;
+}
+
+.video-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .text-container p {
   font-size: 1.2rem;
   line-height: 1.8;
