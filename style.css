@@ -252,10 +252,6 @@ nav.sticky {
   align-items: center;
 }
 
-.content-box.reverse {
-  flex-direction: row-reverse;
-}
-
 .image-container {
   position: relative;
   border-radius: 40px;
@@ -487,10 +483,6 @@ nav.sticky {
   .content-box {
     grid-template-columns: 1fr;
     gap: 3rem;
-  }
-
-  .content-box.reverse .image-container {
-    order: -1; 
   }
 
   .text-container h3 {
