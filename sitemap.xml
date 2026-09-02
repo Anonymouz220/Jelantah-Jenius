@@ -8,22 +8,22 @@
   </url>
   <!-- About Us -->
   <url>
-    <loc>https://jelantahjenius.com/about.html</loc>
+    <loc>https://jelantahjenius.com/about</loc>
     <priority>0.5</priority>
   </url>
   <!-- Articles -->
   <url>
-    <loc>https://jelantahjenius.com/articles.html</loc>
+    <loc>https://jelantahjenius.com/articles</loc>
     <priority>0.7</priority>
   </url>
   <!-- Programs -->
   <url>
-    <loc>https://jelantahjenius.com/programs.html</loc>
+    <loc>https://jelantahjenius.com/programs</loc>
     <priority>0.7</priority>
   </url>
   <!-- Contact Us -->
   <url>
-    <loc>https://jelantahjenius.com/contact.html</loc>
+    <loc>https://jelantahjenius.com/contact</loc>
     <priority>0.5</priority>
   </url>
 
