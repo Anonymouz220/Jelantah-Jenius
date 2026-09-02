@@ -238,7 +238,7 @@ nav.sticky {
 }
 
 /* Modern Sections */
-.about, .education, .programs, .contact {
+.about, .education, .programs, .contact, .batches {
   padding: 10rem 0;
 }
 
@@ -476,7 +476,7 @@ nav.sticky {
   }
 
   /* Responsive layout adjustments for main content */
-  .about, .education, .programs, .contact {
+  .about, .education, .programs, .contact, .batches {
     padding: 5rem 0;
   }
 
