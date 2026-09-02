@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programs - Jelantah Jenius</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="attached_assets/JJ%20Logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="attached_assets/JJ%20Logo.png" />
+  <link rel="canonical" href="https://jelantahjenius.com/batches" />
+</head>
+<body>
+  <nav id="navbar">
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="attached_assets/JELANTAH%20JENIUS%20png%20logo%20only%20with%20shadow.png" alt="Logo">
+          Jelantah Jenius
+        </a>
+      </div>
+      <ul class="menu">
+        <div class="cancel-btn"><i class="fas fa-times"></i></div>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/batches" class="active">Batches</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+      <div class="menu-btn"><i class="fas fa-bars"></i></div>
+    </div>
+  </nav>
+
+  <!-- Batch Selection Header -->
+  <section class="programs" style="padding-top: 100px;">
+    <div class="batch-selector-container" style="margin-bottom: 30px; display: flex; align-items: center; gap: 15px;">
+      <h2>Select Batch:</h2>
+      <select id="batchSelect" onchange="switchBatch(this.value)" class="batch-dropdown">
+        <option value="batch-1">Batch 1</option>
+        <option value="batch-2">Batch 2</option>
+      </select>
+    </div>
+
+    <!-- BATCH 1 CONTENT BLOCK -->
+    <div id="batch-1" class="batch-content active-batch">
+      <div class="content-box">
+        <div class="image-container">
+          <div class="video-wrapper">
+            <video 
+              id="recapVideo1"
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              width="100%" 
+              style="border-radius: 8px; cursor: pointer;"
+              onclick="toggleMute(this, 'unmuteBadge1')">
+              <source src="attached_assets/Jelantah-Jenius-Recap-Vid-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div id="unmuteBadge1" class="unmute-badge" onclick="toggleMute(document.getElementById('recapVideo1'), 'unmuteBadge1')">
+              <i class="fas fa-volume-mute"></i> Click to unmute
+            </div>
+          </div>
+        </div>
+        <div class="text-container">
+          <h3>Batch 1 Recap</h3>
+          <p>Batch 1 of Jelantah Jenius achieved significant momentum, expanding used cooking oil collection while delivering educational workshops and community support to local orphanages.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BATCH 2 CONTENT BLOCK (Template for next batch) -->
+    <div id="batch-2" class="batch-content" style="display: none;">
+      <div class="content-box">
+        <div class="image-container">
+          <img src="attached_assets/stock_images/sustainable_renewabl_cd51e253.jpg" alt="Batch 2" style="border-radius: 8px; width: 100%;">
+        </div>
+        <div class="text-container">
+          <h3>Batch 2 Recap</h3>
+          <p>Details and highlights for Batch 2 will be updated here as the initiative continues to expand.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- JavaScript for Switching Batches & Mute Control -->
+  <script>
+    function switchBatch(batchId) {
+      // Hide all batch content blocks
+      const allBatches = document.querySelectorAll('.batch-content');
+      allBatches.forEach(batch => {
+        batch.style.display = 'none';
+      });
+
+      // Show selected batch block
+      const selectedBatch = document.getElementById(batchId);
+      if (selectedBatch) {
+        selectedBatch.style.display = 'block';
+      }
+    }
+
+    function toggleMute(video, badgeId) {
+      video.muted = !video.muted;
+      const badge = document.getElementById(badgeId);
+      if (video.muted) {
+        badge.classList.remove('hidden');
+        badge.innerHTML = '<i class="fas fa-volume-mute"></i> Click to unmute';
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
