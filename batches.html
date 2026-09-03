@@ -44,12 +44,14 @@
           width="100%"
           style="border-radius: 8px; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; display: block;"
           onclick="
+            const v = document.getElementById('recapVideo1');
             const isZoomed = this.style.transform === 'scale(1.08)';
+            v.muted = !v.muted;
             if (isZoomed) {
               this.style.transform = 'scale(1)';
               this.style.boxShadow = 'none';
             } else {
-              this.style.transform = 'scale(1.08)';
+              this.style.transform = 'translate(-50%, -50%)';
               this.style.boxShadow = '0 20px 35px rgba(0,0,0,0.15)';
             }
           ">
