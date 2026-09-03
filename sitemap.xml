@@ -21,6 +21,11 @@
     <loc>https://jelantahjenius.com/programs</loc>
     <priority>0.7</priority>
   </url>
+  <!-- Batches -->
+  <url>
+    <loc>https://jelantahjenius.com/batches</loc>
+    <priority>0.3</priority>
+  </url>
   <!-- Contact Us -->
   <url>
     <loc>https://jelantahjenius.com/contact</loc>
