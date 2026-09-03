@@ -67,6 +67,10 @@
 
   <section style="padding-top: 10rem; padding-bottom: 3rem;">
     <div class="content-box">
+      <div class="text-container">
+        <h3>Batch 1 Recap</h3>
+        <p>"Through Batch 1, Jelantah Jenius advanced sustainable waste management by scaling used cooking oil recovery and driving social impact through educational outreach at local orphanages."</p>
+      </div>
       <div style="width: 100%; height: auto; display: flex; flex-direction: column; align-items: center; gap: 12px;">
       
       <!-- Video Element -->
@@ -139,13 +143,17 @@
     </div>
   </section>
 
+  <div id="videoBackdrop" class="video-backdrop" onclick="document.getElementById('recapVideo2').click();"></div>
+
   <section style="padding-top: 2rem; padding-bottom: 3rem;">
   <div class="content-box">
     <div class="text-container">
       <h3>Batch 2 Recap</h3>
       <p>"Coming Soon!"</p>
     </div>
-    <div style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;">
+    <div style="width: 100%; height: auto; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+      
+      <!-- Video Element -->
       <video
         id="recapVideo2"
         autoplay
@@ -153,29 +161,64 @@
         loop
         playsinline
         width="100%"
-        style="border-radius: 8px; cursor: pointer;"
-        onclick="this.muted = !this.muted;">
+        style="border-radius: 8px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;"
+        onclick="
+          const backdrop = document.getElementById('videoBackdrop');
+          const isZoomed = this.classList.toggle('center-overlay');
+          const btnIcon = document.querySelector('#muteToggleBtn i');
+          const btnText = document.querySelector('#muteToggleBtn span');
+          
+          if (backdrop) backdrop.classList.toggle('active', isZoomed);
+
+          /* Sync audio with zoom state */
+          if (isZoomed) {
+            this.muted = false;
+            if (btnIcon) btnIcon.className = 'fa-solid fa-volume';
+            if (btnText) btnText.textContent = 'Mute video';
+          } else {
+            this.muted = true;
+            if (btnIcon) btnIcon.className = 'fa-solid fa-volume-xmark';
+            if (btnText) btnText.textContent = 'Unmute video';
+          }
+        ">
         <source src="attached_assets/Placeholder Video for Jelantah Jenius.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <a href="javascript:void(0)" 
+
+      <!-- Action Row: Mute & Zoom Controls -->
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        
+        <!-- Mute/Unmute Toggle -->
+        <a href="javascript:void(0)" 
+           id="muteToggleBtn"
            onclick="
-             const v = document.getElementById('recapVideo2'); 
-             const icon = this.querySelector('i'); 
-             const text = this.querySelector('span'); 
-             v.muted = !v.muted; 
-             if (v.muted) { 
-               icon.className = 'fa-solid fa-volume-xmark'; 
-               text.textContent = 'Unmute video'; 
-             } else { 
-               icon.className = 'fa-solid fa-volume'; 
-               text.textContent = 'Mute video'; 
+             const v = document.getElementById('recapVideo2');
+             const icon = this.querySelector('i');
+             const text = this.querySelector('span');
+             v.muted = !v.muted;
+             if (v.muted) {
+               icon.className = 'fa-solid fa-volume-xmark';
+               text.textContent = 'Unmute video';
+             } else {
+               icon.className = 'fa-solid fa-volume';
+               text.textContent = 'Mute video';
              }
            " 
            style="color: var(--primary); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
           <i class="fa-solid fa-volume-xmark"></i>
           <span>Unmute video</span>
         </a>
+
+        <!-- Zoom Trigger -->
+        <a href="javascript:void(0)"
+           onclick="document.getElementById('recapVideo2').click();"
+           style="color: #666; text-decoration: none; font-size: 0.875rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;">
+          <i class="fa-solid fa-magnifying-glass-plus"></i>
+          <span>Zoom video</span>
+        </a>
+
+      </div>
+
     </div>
   </div>
 </section>
