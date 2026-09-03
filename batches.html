@@ -35,20 +35,30 @@
   <section style="padding-top: 10rem; padding-bottom: 3rem;">
     <div class="content-box">
       <div style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;">
-        <video 
-          id="recapVideo"
-          autoplay 
-          muted 
-          loop 
-          playsinline 
-          width="100%" 
-          style="border-radius: 8px; cursor: pointer;">
+        <video
+          id="recapVideo1"
+          autoplay
+          muted
+          loop
+          playsinline
+          width="100%"
+          style="border-radius: 8px; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; display: block;"
+          onclick="
+            const isZoomed = this.style.transform === 'scale(1.08)';
+            if (isZoomed) {
+              this.style.transform = 'scale(1)';
+              this.style.boxShadow = 'none';
+            } else {
+              this.style.transform = 'scale(1.08)';
+              this.style.boxShadow = '0 20px 35px rgba(0,0,0,0.15)';
+            }
+          ">
           <source src="attached_assets/Jelantah Jenius Recap Vid (1).mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <a href="javascript:void(0)" 
            onclick="
-             const v = document.getElementById('recapVideo'); 
+             const v = document.getElementById('recapVideo1'); 
              const icon = this.querySelector('i'); 
              const text = this.querySelector('span'); 
              v.muted = !v.muted; 
@@ -80,7 +90,7 @@
     </div>
     <div style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;">
       <video
-        id="recapVideo"
+        id="recapVideo2"
         autoplay
         muted
         loop
@@ -93,7 +103,7 @@
       </video>
       <a href="javascript:void(0)" 
            onclick="
-             const v = document.getElementById('recapVideo'); 
+             const v = document.getElementById('recapVideo2'); 
              const icon = this.querySelector('i'); 
              const text = this.querySelector('span'); 
              v.muted = !v.muted; 
