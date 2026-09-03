@@ -47,10 +47,22 @@
           Your browser does not support the video tag.
         </video>
         <a href="javascript:void(0)" 
-           onclick="const v = document.getElementById('recapVideo'); v.muted = !v.muted;" 
+   onclick="
+             const v = document.getElementById('recapVideo'); 
+             const icon = this.querySelector('i'); 
+             const text = this.querySelector('span'); 
+             v.muted = !v.muted; 
+             if (v.muted) { 
+               icon.className = 'fa-solid fa-volume-xmark'; 
+               text.textContent = 'Unmute video'; 
+             } else { 
+               icon.className = 'fa-solid fa-volume'; 
+               text.textContent = 'Mute video'; 
+             }
+           " 
            style="color: var(--primary); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
-          <i class="fa-solid fa-volume"></i>
-          <span>Click to unmute/mute the video</span>
+          <i class="fa-solid fa-volume-xmark"></i>
+          <span>Unmute video</span>
         </a>
       </div>
       <div class="text-container">
