@@ -39,6 +39,30 @@
       z-index: 9999 !important;
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
     }
+
+    /* Section Divider Styling */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      margin: 1rem auto;
+      text-align: center;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .section-divider i {
+      padding: 0 15px;
+      color: var(--primary, #495321);
+      font-size: 1.1rem;
+      opacity: 0.6;
+    }
   </style>
 </head>
 <body>
@@ -63,7 +87,7 @@
     </div>
   </nav>
 
-  <div id="videoBackdrop" class="video-backdrop" onclick="document.getElementById('recapVideo1').click();"></div>
+  <div id="videoBackdrop1" class="video-backdrop" onclick="document.getElementById('recapVideo1').click();"></div>
 
   <section style="padding-top: 10rem; padding-bottom: 3rem;">
     <div class="content-box">
@@ -79,10 +103,10 @@
         width="100%"
         style="border-radius: 8px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;"
         onclick="
-          const backdrop = document.getElementById('videoBackdrop');
+          const backdrop = document.getElementById('videoBackdrop1');
           const isZoomed = this.classList.toggle('center-overlay');
-          const btnIcon = document.querySelector('#muteToggleBtn i');
-          const btnText = document.querySelector('#muteToggleBtn span');
+          const btnIcon = document.querySelector('#muteToggleBtn1 i');
+          const btnText = document.querySelector('#muteToggleBtn1 span');
           
           if (backdrop) backdrop.classList.toggle('active', isZoomed);
 
@@ -106,7 +130,7 @@
         
         <!-- Mute/Unmute Toggle -->
         <a href="javascript:void(0)" 
-           id="muteToggleBtn"
+           id="muteToggleBtn1"
            onclick="
              const v = document.getElementById('recapVideo1');
              const icon = this.querySelector('i');
@@ -143,7 +167,12 @@
     </div>
   </section>
 
-  <div id="videoBackdrop" class="video-backdrop" onclick="document.getElementById('recapVideo2').click();"></div>
+  <!-- Decorative Separator Between Batches -->
+  <div class="section-divider">
+    <i class="fa-solid fa-leaf"></i>
+  </div>
+
+  <div id="videoBackdrop2" class="video-backdrop" onclick="document.getElementById('recapVideo2').click();"></div>
 
   <section style="padding-top: 2rem; padding-bottom: 3rem;">
   <div class="content-box">
@@ -163,10 +192,10 @@
         width="100%"
         style="border-radius: 8px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;"
         onclick="
-          const backdrop = document.getElementById('videoBackdrop');
+          const backdrop = document.getElementById('videoBackdrop2');
           const isZoomed = this.classList.toggle('center-overlay');
-          const btnIcon = document.querySelector('#muteToggleBtn i');
-          const btnText = document.querySelector('#muteToggleBtn span');
+          const btnIcon = document.querySelector('#muteToggleBtn2 i');
+          const btnText = document.querySelector('#muteToggleBtn2 span');
           
           if (backdrop) backdrop.classList.toggle('active', isZoomed);
 
@@ -190,7 +219,7 @@
         
         <!-- Mute/Unmute Toggle -->
         <a href="javascript:void(0)" 
-           id="muteToggleBtn"
+           id="muteToggleBtn2"
            onclick="
              const v = document.getElementById('recapVideo2');
              const icon = this.querySelector('i');
