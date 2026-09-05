@@ -96,13 +96,13 @@
       <div style="width: 100%; height: auto; display: flex; flex-direction: column; align-items: center; gap: 12px;">
         <video
           id="recapVideo1"
+          controls
           autoplay
           muted
           loop
           playsinline
           width="100%"
-          style="border-radius: 8px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;"
-          onclick="toggleVideoZoom(this, 'muteToggleBtn1')">
+          style="border-radius: 8px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;">
           <source src="attached_assets/Jelantah Jenius Recap Vid (1).mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -148,13 +148,13 @@
       <div style="width: 100%; height: auto; display: flex; flex-direction: column; align-items: center; gap: 12px;">
         <video
           id="recapVideo2"
+          controls
           autoplay
           muted
           loop
           playsinline
           width="100%"
-          style="border-radius: 8px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;"
-          onclick="toggleVideoZoom(this, 'muteToggleBtn2')">
+          style="border-radius: 8px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;">
           <source src="attached_assets/Placeholder Video for Jelantah Jenius.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -185,8 +185,8 @@
       const backdrop = document.getElementById('videoBackdrop');
       const isZoomed = videoElem.classList.toggle('center-overlay');
       const btn = document.getElementById(btnId);
-      const btnIcon = btn.querySelector('i');
-      const btnText = btn.querySelector('span');
+      const btnIcon = btn ? btn.querySelector('i') : null;
+      const btnText = btn ? btn.querySelector('span') : null;
 
       if (backdrop) backdrop.classList.toggle('active', isZoomed);
 
