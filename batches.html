@@ -40,7 +40,7 @@
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
     }
 
-    /* Centered, high-visibility section divider */
+    /* Properly centered divider with generous spacing around the icon */
     .section-divider {
       display: flex;
       align-items: center;
@@ -54,16 +54,17 @@
     .section-divider::after {
       content: '';
       flex: 1;
-      height: 2px;
-      background-color: #495321;
-      opacity: 0.85;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.15);
     }
 
     .section-divider i {
-      padding: 0 20px;
+      padding: 0 30px; /* Generous gap so line doesn't touch the leaf on either side */
       color: #495321;
-      font-size: 1.5rem;
-      line-height: 1;
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
 </head>
@@ -169,7 +170,7 @@
     </div>
   </section>
 
-  <!-- Centered Divider Line with Leaf Motif -->
+  <!-- Divider Line with Centered Leaf and Clear Padding -->
   <div class="section-divider">
     <i class="fa-solid fa-leaf"></i>
   </div>
