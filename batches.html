@@ -40,13 +40,13 @@
       box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
     }
 
-    /* Prominent Section Divider Styling */
+    /* Centered, high-visibility section divider */
     .section-divider {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 85%;
-      margin: 2rem auto;
+      margin: 2.5rem auto;
       text-align: center;
     }
 
@@ -54,14 +54,16 @@
     .section-divider::after {
       content: '';
       flex: 1;
-      border-bottom: 2px solid #495321;
-      opacity: 0.4;
+      height: 2px;
+      background-color: #495321;
+      opacity: 0.85;
     }
 
     .section-divider i {
-      padding: 0 18px;
+      padding: 0 20px;
       color: #495321;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      line-height: 1;
     }
   </style>
 </head>
@@ -87,9 +89,9 @@
     </div>
   </nav>
 
-  <div id="videoBackdrop1" class="video-backdrop" onclick="document.getElementById('recapVideo1').click();"></div>
+  <div id="videoBackdrop" class="video-backdrop" onclick="document.getElementById('recapVideo1').click();"></div>
 
-  <section style="padding-top: 10rem; padding-bottom: 2rem;">
+  <section style="padding-top: 10rem; padding-bottom: 3rem;">
     <div class="content-box">
       <div style="width: 100%; height: auto; display: flex; flex-direction: column; align-items: center; gap: 12px;">
       
@@ -103,10 +105,10 @@
         width="100%"
         style="border-radius: 8px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;"
         onclick="
-          const backdrop = document.getElementById('videoBackdrop1');
+          const backdrop = document.getElementById('videoBackdrop');
           const isZoomed = this.classList.toggle('center-overlay');
-          const btnIcon = document.querySelector('#muteToggleBtn1 i');
-          const btnText = document.querySelector('#muteToggleBtn1 span');
+          const btnIcon = document.querySelector('#muteToggleBtn i');
+          const btnText = document.querySelector('#muteToggleBtn span');
           
           if (backdrop) backdrop.classList.toggle('active', isZoomed);
 
@@ -130,7 +132,7 @@
         
         <!-- Mute/Unmute Toggle -->
         <a href="javascript:void(0)" 
-           id="muteToggleBtn1"
+           id="muteToggleBtn"
            onclick="
              const v = document.getElementById('recapVideo1');
              const icon = this.querySelector('i');
@@ -167,12 +169,12 @@
     </div>
   </section>
 
-  <!-- Visible Separator Motif -->
+  <!-- Centered Divider Line with Leaf Motif -->
   <div class="section-divider">
     <i class="fa-solid fa-leaf"></i>
   </div>
 
-  <div id="videoBackdrop2" class="video-backdrop" onclick="document.getElementById('recapVideo2').click();"></div>
+  <div id="videoBackdrop" class="video-backdrop" onclick="document.getElementById('recapVideo2').click();"></div>
 
   <section style="padding-top: 2rem; padding-bottom: 3rem;">
   <div class="content-box">
@@ -192,10 +194,10 @@
         width="100%"
         style="border-radius: 8px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: block;"
         onclick="
-          const backdrop = document.getElementById('videoBackdrop2');
+          const backdrop = document.getElementById('videoBackdrop');
           const isZoomed = this.classList.toggle('center-overlay');
-          const btnIcon = document.querySelector('#muteToggleBtn2 i');
-          const btnText = document.querySelector('#muteToggleBtn2 span');
+          const btnIcon = document.querySelector('#muteToggleBtn i');
+          const btnText = document.querySelector('#muteToggleBtn span');
           
           if (backdrop) backdrop.classList.toggle('active', isZoomed);
 
@@ -219,7 +221,7 @@
         
         <!-- Mute/Unmute Toggle -->
         <a href="javascript:void(0)" 
-           id="muteToggleBtn2"
+           id="muteToggleBtn"
            onclick="
              const v = document.getElementById('recapVideo2');
              const icon = this.querySelector('i');
